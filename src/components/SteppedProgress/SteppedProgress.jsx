@@ -97,7 +97,7 @@ const StepIcon = ({ isActive, Icon, label }) => (
         <div className="absolute -inset-1.5 bg-indigo-100 rounded-full animate-pulse z-0" />
       )}
     </div>
-    <div className="text-xs text-gray-700 max-w-[6rem]">{label}</div>
+    <div className="text-xs text-gray-300 max-w-[6rem]">{label}</div>
   </div>
 );
 

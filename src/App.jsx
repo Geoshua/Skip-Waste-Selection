@@ -16,7 +16,7 @@ function App() {
 
 
     </div>
-    <div class="w-full h-1/2">
+    <div class="w-full ">
       <div className="items-center">
         <h2 className="text-2xl text-white font-semibold">Choose Skip Size</h2>
         <p className="text-lg text-gray-400">Select the skip size that best suits your needs</p>
