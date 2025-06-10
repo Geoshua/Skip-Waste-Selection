@@ -1,5 +1,3 @@
-import { FiLogIn } from "react-icons/fi";
-
 
 const Button = () => {
   return (
@@ -21,7 +19,7 @@ const Button = () => {
         hover:before:translate-y-[0%]
         active:scale-95`}
     >
-      <FiLogIn />
+
       <span>Sign up free</span>
     </button>
   );
