@@ -1,6 +1,8 @@
-# React + Vite
+# Skip Waste Selection
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a code challenge by REMWaste.
+
+[Original](https://github.com/Geoshua/Skip-Waste-Selection/blob/main/src/assets/original.jpg)
 
 Currently, two official plugins are available:
 
