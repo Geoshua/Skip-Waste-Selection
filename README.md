@@ -30,6 +30,6 @@ blocks and not just doodles.
 ## Footnotes
 This is the final look of the project if you are too lazy to go check it out on the live site.
 
-![Final](https://github.com/Geoshua/Skip-Waste-Selection/blob/main/src/assets/final.png "Final")
+![Final](https://github.com/Geoshua/Skip-Waste-Selection/blob/main/src/assets/final.jpg "Final")
 - The touch drag on the phone is a bit wonky, it would'nt have been a problem if I had made the whole page strictlly fitting on the phone but it works now so it works.
 - I've noticed I forgot to include the disclaimer at the bottom box container, I am a little too unfazed to mingle with the project now that I am typing this readme from the bed.
