@@ -74,7 +74,7 @@ export default function SkipSizeSelector() {
     
     <div className="w-full flex flex-col items-center p-2 pb-32 relative  text-white text-sm md:text-base">
         {/* Top Section*/}
-        <div className="w-90 p-10 float-start">
+        <div className="md:w-10/12 w-full p-10 float-start">
         <SteppedProgressBar currentStep={step} />
         </div>
         <div class="w-full ">

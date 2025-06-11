@@ -110,7 +110,7 @@ const StepIcon = ({ isActive, Icon, label }) => (
         <div className="absolute -inset-1.5 bg-blued-200 opacity-30 rounded-full animate-pulse z-0" />
       )}
     </div>
-    <div className="text-xs text-gray-700 max-w-[6rem] text-left">{label}</div>
+    <div className="text-base text-gray-400 max-w-[6rem] text-left">{label}</div>
   </div>
 );
 
