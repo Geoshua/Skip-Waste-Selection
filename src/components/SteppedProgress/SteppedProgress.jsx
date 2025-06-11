@@ -8,6 +8,7 @@ import {
   ShieldCheck,
   CreditCard,
   Check,
+  ArrowBigRight
 } from "lucide-react";
 
 const defaultIcons = [ MapPin, Trash2, Truck, ShieldCheck, Calendar, CreditCard];
@@ -20,7 +21,6 @@ const defaultLabels = [
   "Payment"
 ];
 
-
 export const SteppedProgressBar = ({
   currentStep = 0,
   totalSteps = 6,
@@ -31,7 +31,6 @@ export const SteppedProgressBar = ({
   const containerRef = useRef(null);
   const activeRef = useRef(null);
 
-  // 🔁 Scroll active item into center view
   useEffect(() => {
     if (containerRef.current && activeRef.current) {
       const container = containerRef.current;
@@ -60,7 +59,7 @@ export const SteppedProgressBar = ({
             {index !== totalSteps - 1 && (
               <div className="h-1 bg-gray-200 relative flex-1 min-w-[40px] rounded-full overflow-hidden">
                 <motion.div
-                  className="absolute top-0 bottom-0 left-0 bg-indigo-600 rounded-full"
+                  className="absolute top-0 bottom-0 left-0 bg-blued-400 rounded-full"
                   animate={{ width: isPrevComplete ? "100%" : "0%" }}
                   transition={{ ease: "easeInOut", duration: 0.3 }}
                 />
@@ -79,7 +78,7 @@ const StepIcon = ({ isActive, Icon, label }) => (
       <div
         className={`w-full h-full flex items-center justify-center border-2 rounded-full transition-colors duration-300 z-10 ${
           isActive
-            ? "bg-indigo-600 border-indigo-600 text-white"
+            ? "bg-blued-400 border-blued-600 text-white"
             : "border-gray-300 text-gray-300"
         }`}
       >
@@ -108,17 +107,15 @@ const StepIcon = ({ isActive, Icon, label }) => (
         </AnimatePresence>
       </div>
       {isActive && (
-        <div className="absolute -inset-1.5 bg-indigo-100 rounded-full animate-pulse z-0" />
+        <div className="absolute -inset-1.5 bg-blued-200 opacity-30 rounded-full animate-pulse z-0" />
       )}
     </div>
     <div className="text-xs text-gray-700 max-w-[6rem] text-left">{label}</div>
   </div>
 );
 
-// Optional: hide scrollbar globally in tailwind.config or use plugin
-// You can also add `scrollbar-hide` from `tailwind-scrollbar-hide` if desired
 
-// 🟢 Buttons
+
 export const SteppedProgressButtons = ({ currentStep, totalSteps, onStepChange }) => {
   const handleChange = (delta) => {
     const next = currentStep + delta;
@@ -129,18 +126,54 @@ export const SteppedProgressButtons = ({ currentStep, totalSteps, onStepChange }
 
   return (
     <div className="flex justify-end mt-6 gap-2">
-      <button
-        onClick={() => handleChange(-1)}
-        className="px-4 py-1 rounded hover:bg-gray-100 text-black"
-      >
-        Prev
-      </button>
-      <button
-        onClick={() => handleChange(1)}
-        className="px-4 py-1 rounded bg-black text-white"
-      >
-        Next
-      </button>
+<div className="flex gap-4">
+  {/* Previous Button */}
+  <button
+    onClick={() => handleChange(-1)}
+    className={`
+      relative z-0 flex items-center gap-2 overflow-hidden rounded-lg border-[1px]
+      border-gray-400 px-4 py-2 font-semibold text-lg
+      text-gray-400 transition-all duration-500
+      
+      before:absolute before:inset-0
+      before:-z-10 before:translate-x-[150%]
+      before:translate-y-[150%] before:scale-[2.5]
+      before:rounded-[100%] before:bg-gray-400
+      before:transition-transform before:duration-1000
+      before:content-[""]
+
+      hover:scale-105 hover:text-blued-900
+      hover:before:translate-x-[0%]
+      hover:before:translate-y-[0%]
+      active:scale-95`}
+  >
+    <span>Back</span>
+  </button>
+
+  {/* Continue Button */}
+  <button
+    onClick={() => handleChange(1)}
+    className={`
+      relative z-0 flex items-center gap-2 overflow-hidden rounded-lg border-[1px]
+      border-blued-400 px-4 py-2 font-semibold text-lg
+       text-blued-300 transition-all duration-500
+      
+      before:absolute before:inset-0
+      before:-z-10 before:translate-x-[150%]
+      before:translate-y-[150%] before:scale-[2.5]
+      before:rounded-[100%] before:bg-blued-400
+      before:transition-transform before:duration-1000
+      before:content-[""]
+
+      hover:scale-105 hover:text-white
+      hover:before:translate-x-[0%]
+      hover:before:translate-y-[0%]
+      active:scale-95`}
+  >
+    <span>Continue</span>
+    <ArrowBigRight className="w-5 h-5" />
+  </button>
+</div>
     </div>
   );
 };
