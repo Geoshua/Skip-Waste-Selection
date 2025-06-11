@@ -1,11 +1,14 @@
 # Skip Waste Selection
 
 This is a coding challenge by REMWaste for an application as a Full Stack Dev.
+
 The sandbox is live at https://skipwasteselection.netlify.app/
+
 The project was built on ReactJS and TailwindCSS using Vite, hosted on Netlify.  
 
 ## Task:
 Completely redesign the webpage below while maintaining functionality was the task.
+
 ![Original](https://github.com/Geoshua/Skip-Waste-Selection/blob/main/src/assets/original.jpg "Original")
 
 # Design Thoughts
@@ -24,6 +27,7 @@ blocks and not just doodles.
 
 ## Footnotes
 This is the final look of the project if you are too lazy to go check it out on the live site.
+
 ![Final](https://github.com/Geoshua/Skip-Waste-Selection/blob/main/src/assets/final.png "Final")
 - The touch drag on the phone is a bit wonky, it would'nt have been a problem if I had made the whole page strictlly fitting on the phone but it works now so it works.
 - I've noticed I forgot to include the disclaimer at the bottom box container, I am a little too unfazed to mingle with the project now that I am typing this readme from the bed.
