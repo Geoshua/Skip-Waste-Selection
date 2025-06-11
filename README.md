@@ -2,7 +2,7 @@
 
 This is a code challenge by REMWaste.
 
-[Original](https://github.com/Geoshua/Skip-Waste-Selection/blob/main/src/assets/original.jpg)
+![Original](https://github.com/Geoshua/Skip-Waste-Selection/blob/main/src/assets/original.jpg "Original")
 
 Currently, two official plugins are available:
 
