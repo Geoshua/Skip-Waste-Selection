@@ -23,13 +23,13 @@ This is the draft of a quick idea of implementing the page without using a very
 conventional grid method, it is then given to ChatGPT to visualize it as proper
 blocks and not just doodles.
 
-![Draft](https://github.com/Geoshua/Skip-Waste-Selection/blob/main/src/assets/draft.jpeg "Draft")
+![Draft](https://github.com/Geoshua/Skip-Waste-Selection/blob/main/src/assets/draft.jpg "Draft")
 
 ![AIdraft](https://github.com/Geoshua/Skip-Waste-Selection/blob/main/src/assets/aidraft.png "AIdraft")
 
 ## Footnotes
 This is the final look of the project if you are too lazy to go check it out on the live site.
 
-![Final](https://github.com/Geoshua/Skip-Waste-Selection/blob/main/src/assets/final.jpg "Final")
+![Final](https://github.com/Geoshua/Skip-Waste-Selection/blob/main/src/assets/final.png "Final")
 - The touch drag on the phone is a bit wonky, it would'nt have been a problem if I had made the whole page strictlly fitting on the phone but it works now so it works.
 - I've noticed I forgot to include the disclaimer at the bottom box container, I am a little too unfazed to mingle with the project now that I am typing this readme from the bed.
