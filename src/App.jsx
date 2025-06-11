@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-    <div className="h-full">
+    <div className="lg:h-full">
       <div className="w-full p-10 float-start">
 
         <SteppedProgressBar currentStep={step} />
