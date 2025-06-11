@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   Trash2,
-  Recycle,
+  Calendar,
   Truck,
-  Leaf,
+  MapPin,
   ShieldCheck,
-  PackageOpen,
+  CreditCard,
   Check,
 } from "lucide-react";
 
-const defaultIcons = [Trash2, Recycle, Truck, Leaf, ShieldCheck, PackageOpen];
+const defaultIcons = [ MapPin, Trash2, Truck, ShieldCheck, Calendar, CreditCard];
 const defaultLabels = [
   "Postcode",
   "Waste Type",
@@ -20,7 +20,7 @@ const defaultLabels = [
   "Payment"
 ];
 
-// 🟢 Main Progress Bar Component
+
 export const SteppedProgressBar = ({
   currentStep = 0,
   totalSteps = 6,
@@ -28,9 +28,24 @@ export const SteppedProgressBar = ({
   labels = defaultLabels,
 }) => {
   const steps = Array.from({ length: totalSteps });
+  const containerRef = useRef(null);
+  const activeRef = useRef(null);
+
+  // 🔁 Scroll active item into center view
+  useEffect(() => {
+    if (containerRef.current && activeRef.current) {
+      const container = containerRef.current;
+      const active = activeRef.current;
+      const offsetLeft = active.offsetLeft - container.offsetWidth / 2 + active.offsetWidth / 2;
+      container.scrollTo({ left: offsetLeft, behavior: "smooth" });
+    }
+  }, [currentStep]);
 
   return (
-    <div className="flex items-center gap-8 w-full">
+    <div
+      ref={containerRef}
+      className="flex items-center gap-8 overflow-x-auto scrollbar-hide w-full px-4 py-2"
+    >
       {steps.map((_, index) => {
         const isActive = index + 1 <= currentStep;
         const isPrevComplete = index < currentStep;
@@ -39,17 +54,17 @@ export const SteppedProgressBar = ({
 
         return (
           <React.Fragment key={index}>
-            <StepIcon isActive={isActive} Icon={Icon} label={label} />
+            <div ref={index === currentStep - 1 ? activeRef : null}>
+              <StepIcon isActive={isActive} Icon={Icon} label={label} />
+            </div>
             {index !== totalSteps - 1 && (
-              <motion.div
-                className="h-1 bg-gray-200 relative flex-1 rounded-full overflow-hidden"
-              >
+              <div className="h-1 bg-gray-200 relative flex-1 min-w-[40px] rounded-full overflow-hidden">
                 <motion.div
                   className="absolute top-0 bottom-0 left-0 bg-indigo-600 rounded-full"
                   animate={{ width: isPrevComplete ? "100%" : "0%" }}
                   transition={{ ease: "easeInOut", duration: 0.3 }}
                 />
-              </motion.div>
+              </div>
             )}
           </React.Fragment>
         );
@@ -58,14 +73,13 @@ export const SteppedProgressBar = ({
   );
 };
 
-// 🟢 Step with Icon and Label to the Right
 const StepIcon = ({ isActive, Icon, label }) => (
-  <div className="flex items-center gap-3 relative">
-    <div className="relative w-12 h-12">
+  <div className="flex items-center gap-3 min-w-max">
+    <div className="relative w-12 h-12 shrink-0">
       <div
-        className={`w-full h-full flex items-center justify-center border-2 rounded-full font-semibold text-sm relative z-10 transition-colors duration-300 ${
+        className={`w-full h-full flex items-center justify-center border-2 rounded-full transition-colors duration-300 z-10 ${
           isActive
-            ? "border-indigo-600 bg-indigo-600 text-white"
+            ? "bg-indigo-600 border-indigo-600 text-white"
             : "border-gray-300 text-gray-300"
         }`}
       >
@@ -97,9 +111,12 @@ const StepIcon = ({ isActive, Icon, label }) => (
         <div className="absolute -inset-1.5 bg-indigo-100 rounded-full animate-pulse z-0" />
       )}
     </div>
-    <div className="text-xs text-gray-300 max-w-[6rem]">{label}</div>
+    <div className="text-xs text-gray-700 max-w-[6rem] text-left">{label}</div>
   </div>
 );
+
+// Optional: hide scrollbar globally in tailwind.config or use plugin
+// You can also add `scrollbar-hide` from `tailwind-scrollbar-hide` if desired
 
 // 🟢 Buttons
 export const SteppedProgressButtons = ({ currentStep, totalSteps, onStepChange }) => {

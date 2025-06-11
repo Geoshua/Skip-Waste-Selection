@@ -20,7 +20,7 @@ const Button = () => {
         active:scale-95`}
     >
 
-      <span>Sign up free</span>
+      <span>Select Skip</span>
     </button>
   );
 };
