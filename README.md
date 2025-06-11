@@ -14,7 +14,9 @@ Completely redesign the webpage below while maintaining functionality was the ta
 # Design Thoughts
 Since I was told to keep the Functionality intact, I saw to keep the step progress tracker same at the top, with some refinements to the animation. Same thing for the originally footer now container at the bottom. Both elements are essentially the same but with bits of refinements to color and animation. 
 
-The skip size selection is now a single box container, the right side being a scroll selector, and the left side displaying the skip size with an image for reference. same as the original site, when the user selects a skip it is displayed in a bottom container, in this case it would be much more useful for the user to compare the different skips. Personally I thought the grid design wouldve been sufficient and intuitive, the only potential flaw would be that there were too many skip sizes and you couldn't really see it all at once. I saw it as a fun opportunity to try to make a component that would tackle this problem in a much smaller footprint, not needing the user to actually scroll down the page. I was probably partially inspired by something like setting the alarm, where you get those dials to move the number.
+The skip size selection is now a single box container, the right side being a scroll selector, and the left side displaying the skip size with an image for reference. same as the original site, when the user selects a skip it is displayed in a bottom container, in this case it would be much more useful for the user to compare the different skips. 
+
+Personally I thought the grid design wouldve been sufficient and intuitive, the only potential flaw would be that there were too many skip sizes and you couldn't really see it all at once. I saw it as a fun opportunity to try to make a component that would tackle this problem in a much smaller footprint, not needing the user to actually scroll down the page. I was probably partially inspired by something like setting the alarm, where you get those dials to move the number.
 
 ## Drafting
 This is the draft of a quick idea of implementing the page without using a very
